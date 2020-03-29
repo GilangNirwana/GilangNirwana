@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Animated Background Headers | Demo 1</title>
+    <title>#DIRUMAHAJA</title>
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
     <meta name="author" content="Codrops" />
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css.css">
     <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quantico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
     <script>
@@ -30,24 +31,43 @@
             let msg = " :)";
             let msg2 = "i hope you enjoy your day :)";
             let hapus = 28;
+           let msg3 ="";
+            let hapus3 = 0;
+            let hapus2 = 0;
             var today = new Date();
             var kk = today.getHours();
             if (kk < 12){
                 text = "Good Morning "+person;
-                msg ="Have a nice day :)"
-                hapus =18;
+                msg ="hey it's time for doing everything"
+                hapus =34;
+                msg2="have a good day"
+                hapus2=15
 
             } 
             if (kk >= 12){
                 text = "Good Afternoon "+person;
-                msg = "Enjoy Do Your Day"
-                hapus = 17;
+                msg = "keep it up for today"
+                hapus = 20;
+                msg2="yess you can do it";
+                hapus2=18;
             }
              if (kk >= 17){
                 text = "Good Evening "+person;
-                msg ="How About This Day ?"
-                msg2 = "i hope you enjoy your day :)";
-                hapus=28;
+                msg ="How Was Your Day ?"
+                hapus=18;
+                msg2 = "i hope you have a good day";
+                hapus2 = 26;
+                
+            }
+
+            if (kk >= 22){
+                text = "Good Night "+person;
+                msg ="Hey its Time to slepp"
+                hapus= 21;
+                msg2 = "go to sleep and have a nice dream :)"
+                hapus2= 36;
+                
+
             }
 
             
@@ -58,7 +78,7 @@
                 deleteSpeed: 100,
                 loopDelay: 2000,
                 loop : true
-            }).go().pause(1000).pause(2000).delete(hapus).type('#dirumahaja').pause(3000);
+            }).go().pause(1000).pause(2000).delete(hapus).type(msg2).pause(2000).delete(hapus2).type('Stay Safe For You :)').pause(1000).delete(20).type('#dirumahaja').pause(6000);
         });
     </script>
     <script>
