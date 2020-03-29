@@ -18,39 +18,72 @@
         src="https://cdn.rawgit.com/mrvautin/typewrite/master/dist/typewrite.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css.css">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
     <script>
         $(document).ready(function () {
             
             let person = prompt("Please enter your name", "gilang");
-            let text = `Good Night  ${person} `
+            let text ='Hii';
+            let msg = " :)";
+            let msg2 = "i hope you enjoy your day :)";
+            let hapus = 28;
+            var today = new Date();
+            var kk = today.getHours();
+            if (kk < 12){
+                text = "Good Morning "+person;
+                msg ="Have a nice day :)"
+                hapus =18;
 
+            } 
+            if (kk >= 12){
+                text = "Good Afternoon "+person;
+                msg = "Enjoy Do Your Day"
+                hapus = 17;
+            }
+             if (kk >= 17){
+                text = "Good Evening "+person;
+                msg ="How About This Day ?"
+                msg2 = "i hope you enjoy your day :)";
+                hapus=28;
+            }
+
+            
             new TypeIt("#simpleUsage", {
-                strings: [text, "have a nice day :)"],
+                strings: [text, msg],
                 speed: 100,
-                waitUntilVisible: true
-            }).go();
+                waitUntilVisible: true,
+                deleteSpeed: 100,
+                loopDelay: 2000,
+                loop : true
+            }).go().pause(1000).pause(2000).delete(hapus).type('#dirumahaja').pause(3000);
         });
     </script>
     <script>
+        var hglobal;
         function startTime() {
-                var today = new Date();
-                var h = today.getHours();
-                var m = today.getMinutes();
-                var s = today.getSeconds();
-                m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('txt').innerHTML =
-                    h + ":" + m + ":" + s;
-                var t = setTimeout(startTime, 500);
-            }
-            function checkTime(i) {
-                if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
-                return i;
-            }
+            var today = new Date();
+            p="anjuing";
+             var h = today.getHours();
+             var m = today.getMinutes();
+            var s = today.getSeconds();
             
+            h = checkTime(h);
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        
+      
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+        
     </script>
 
 </head>
@@ -61,13 +94,13 @@
             <div id="large-header" class="large-header">
                 <canvas id="demo-canvas"></canvas>
                 <div class="main-title">
-                    
+
                     <p id="simpleUsage" class="text"></p>
                 </div>
                 <div class="main-title naik">
                     <p id="txt" class="jam"></p>
                 </div>
-                
+
             </div>
             <!-- <div class="codrops-top clearfix">
 					<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/OffCanvasMenuEffects/"><span>Previous Demo</span></a>
